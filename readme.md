@@ -42,3 +42,7 @@
 
 - Xuất ảnh PNG từ canvas (sử dụng `html2canvas`)
 - Xuất file PDF đơn giản (dùng `jsPDF` nếu cần)
+
+### Demo
+![Demo treorackit](demo.png "Title")
+
