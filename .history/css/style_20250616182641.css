@@ -1,0 +1,230 @@
+/* Canvas styles */
+.canvas-container {
+    width: 100%;
+    height: calc(100vh - 2rem);
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+/* Component styles */
+.component {
+    position: absolute;
+    cursor: move;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: box-shadow 0.2s ease;
+}
+
+.component:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.component.selected {
+    outline: 2px solid #0d6efd;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.component.dragging {
+    z-index: 3;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+}
+
+/* Component SVG styles */
+.component svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Pipe Segment */
+.pipe-segment {
+    height: 20px !important;
+}
+
+.pipe-segment .length-input {
+    position: absolute;
+    width: 60px;
+    text-align: center;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    font-weight: bold;
+    pointer-events: auto;
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 2px;
+    z-index: 2;
+}
+
+.pipe-segment .length-input:focus {
+    outline: 2px solid #0d6efd;
+    background: white;
+}
+
+/* Rotation controls */
+.rotation-controls {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 0.5rem;
+    z-index: 3;
+}
+
+.component:hover .rotation-controls,
+.component.selected .rotation-controls {
+    display: flex;
+}
+
+.rotation-controls button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    pointer-events: auto;
+}
+
+.rotation-controls button:hover {
+    background: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Delete button */
+.delete-button {
+    position: absolute;
+    top: -25px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.component:hover .delete-button,
+.component.selected .delete-button {
+    display: flex;
+}
+
+.delete-button:hover {
+    background: #c82333;
+}
+
+/* Sidebar styles */
+.components-list {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.component-item {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    background: white;
+    cursor: grab;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.component-item:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transform: translateY(-1px);
+}
+
+.component-item:active {
+    cursor: grabbing;
+}
+
+/* Component previews in sidebar */
+.component-item svg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+/* BOM styles */
+.bom-list {
+    font-size: 0.9rem;
+}
+
+.bom-list h6 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.bom-list ul {
+    margin-bottom: 0.5rem;
+}
+
+.bom-list li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+/* Grid styles */
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(#dee2e6 1px, transparent 1px),
+        linear-gradient(90deg, #dee2e6 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Snap guides */
+.snap-guide {
+    position: absolute;
+    background: #0d6efd;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snap-guide.horizontal {
+    height: 1px;
+    width: 100%;
+}
+
+.snap-guide.vertical {
+    width: 1px;
+    height: 100%;
+} 
