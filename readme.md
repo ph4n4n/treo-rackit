@@ -42,14 +42,3 @@
 
 - Xuất ảnh PNG từ canvas (sử dụng `html2canvas`)
 - Xuất file PDF đơn giản (dùng `jsPDF` nếu cần)
-
----
-
-## 🚧 Tasks Breakdown
-
-### 🏁 1. Khởi tạo dự án
-
-```bash
-mkdir treorackit
-cd treorackit
-touch index.html style.css app.js
